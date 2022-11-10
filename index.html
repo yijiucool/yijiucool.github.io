@@ -67,7 +67,9 @@
     <script>
         (function () {
             var canvas = $('#canvas');
-
+            const audio = document.querySelector('audio')
+            console.log('audio load');
+            audio.load();
             if (!canvas[0].getContext) {
                 $("#error").show();
                 return false;
@@ -130,8 +132,8 @@
                     canvas.unbind("mousemove");
                     canvas.removeClass('hand');
                     const audio = document.querySelector('audio')
-                    console.log('audio',audio)
-                    audio.play()
+                    console.log('audio play', audio);
+                    audio.play();
                 }
             }).mousemove(function (e) {
                 var offset = canvas.offset(), x, y;
